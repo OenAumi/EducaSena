@@ -10,7 +10,6 @@ Fitur utama: milestone tracker, saran AI sederhana(hanya dummy), catatan per mil
 - *Index (Landing Page)*
   - Pilih: Import project (JSON) atau Create New project.
   - Tampilan hero dengan ilustrasi + speech bubble responsif (mobile/desktop).
-  - Tombol bergaya khusus (black → pink hover).
 
 - *Dashboard*
   - Header berisi judul & deadline project.
@@ -44,7 +43,7 @@ Fitur utama: milestone tracker, saran AI sederhana(hanya dummy), catatan per mil
 
 ### Front-End
 - HTML5 + Bootstrap 5.3
-- CSS custom (Instrument Serif & Inria Sans fonts, black→pink theme)
+- CSS custom 
 - Vanilla JavaScript (no framework)
 - LocalStorage untuk snapshot offline
 
