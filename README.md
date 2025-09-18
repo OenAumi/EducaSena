@@ -1,68 +1,57 @@
-# CodeIgniter 4 Application Starter
+# 🎓 EducaSena
 
-## What is CodeIgniter?
+EducaSena adalah platform berbasis web untuk membantu mahasiswa/peneliti mengelola *perjalanan riset* (research journey), mulai dari topik → metodologi → data → bab → publikasi.  
+Fitur utama: milestone tracker, saran AI sederhana(hanya dummy), catatan per milestone, dan integrasi WhatsApp(nomor dummy) untuk bertanya langsung ke admin/mentor.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+---
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## 🚀 Fitur Utama
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+- *Index (Landing Page)*
+  - Pilih: Import project (JSON) atau Create New project.
+  - Tampilan hero dengan ilustrasi + speech bubble responsif (mobile/desktop).
+  - Tombol bergaya khusus (black → pink hover).
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+- *Dashboard*
+  - Header berisi judul & deadline project.
+  - Progress bar otomatis berdasarkan milestone selesai.
+  - Advice AI sederhana (rule-based).
+  - CRUD milestone notes → klik milestone tampilkan catatan (modal/toast).
+  - Export JSON project.
+  - Share progress ke WhatsApp.
+  - Unlock mode (password) untuk sinkronisasi data dengan server.
 
-## Installation & updates
+- *Journey*
+  - Grid milestone dengan CRUD penuh:
+    - Rename, Delete, Set Due, Toggle status.
+    - Catatan (notes) per milestone.
+    - AI Suggest (rule-based).
+    - Ask Admin (kirim pesan via WA).
+  - Tambah milestone baru (opsional).
+  - Catatan terkait milestone tersimpan di snapshot.
+  - Semua perubahan disimpan di localStorage dan (jika unlocked) tersinkron ke server.
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+- *Server (CodeIgniter 4 API)*
+  - Register project dengan project_id & password.
+  - Public snapshot endpoint (GET).
+  - Unlock endpoint (POST) → balikan edit_token (Bearer JWT sederhana via HMAC).
+  - Update snapshot endpoint (PUT) dengan Authorization.
+  - Password tersimpan dengan bcrypt.
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+---
 
-## Setup
+## 🛠️ Tech Stack
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+### Front-End
+- HTML5 + Bootstrap 5.3
+- CSS custom (Instrument Serif & Inria Sans fonts, black→pink theme)
+- Vanilla JavaScript (no framework)
+- LocalStorage untuk snapshot offline
 
-## Important Change with index.php
+### Back-End
+- [CodeIgniter 4](https://codeigniter.com/) (PHP)
+- RESTful Resource Controller
+- MySQL / MariaDB
+- Token HMAC untuk proteksi update
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
-
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 8.1 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
