@@ -1,0 +1,67 @@
+:root{ --black:#111; --pink:#ff4d8f; }
+
+/* layout */
+.center-screen{ min-height:calc(100vh - 64px); display:flex; align-items:center; justify-content:center; }
+.hero-wrap{ position:relative; display:inline-block; }
+
+/* brand tengah */
+.navbar .navbar-brand{ font-family:"Instrument Serif", Georgia, serif; }
+.navbar .container-fluid{ justify-content:center !important; }
+
+/* gambar */
+.hero-img{
+  max-height:420px; width:auto; height:auto;
+  filter:drop-shadow(0 14px 28px rgba(0,0,0,.12));
+}
+@media (min-width:992px){ .hero-img{ max-height:1050px; } } /* ~2.5x */
+
+/* ======== BUBBLE MOBILE (absolute di atas gambar) ======== */
+.speech-bubble-mobile{
+  position:absolute; left:50%; transform:translateX(-50%); top:-18px;
+  background:#fff; border:2px solid #e5e7eb; border-radius:16px;
+  padding:.9rem 1.1rem; box-shadow:0 6px 20px rgba(0,0,0,.08);
+  text-align:center; max-width:420px;
+}
+.speech-bubble-mobile h1{ font-family:"Instrument Serif", Georgia, serif; font-size:1.4rem; margin:0 0 .25rem; }
+.speech-bubble-mobile p{ margin:0; color:#6b7280; font-size:.95rem; }
+.speech-bubble-mobile::after{
+  content:""; position:absolute; left:50%; transform:translateX(-50%); bottom:-10px;
+  border-width:10px 12px 0 12px; border-style:solid;
+  border-color:#fff transparent transparent transparent;
+  filter:drop-shadow(0 2px 0 #e5e7eb);
+}
+
+/* ======== BUBBLE DESKTOP (block di kolom kanan, di atas tombol) ======== */
+.speech-bubble-desktop{
+  position:relative; background:#fff; border:2px solid #e5e7eb; border-radius:16px;
+  padding:1.1rem 1.25rem; box-shadow:0 6px 20px rgba(0,0,0,.08);
+  max-width:720px; text-align:left;
+}
+.speech-bubble-desktop h1{ font-family:"Instrument Serif", Georgia, serif; font-size:1.9rem; margin:0 0 .25rem; }
+.speech-bubble-desktop p{ margin:0; color:#6b7280; font-size:1.05rem; }
+.speech-bubble-desktop::after{
+  content:""; position:absolute; left:-12px; top:50%; transform:translateY(-50%);
+  border-width:12px 12px 12px 0; border-style:solid;
+  border-color:transparent #fff transparent transparent;
+  filter:drop-shadow(-2px 0 0 #e5e7eb);
+}
+
+/* tombol hitam & outline hitam */
+.btn-dark-pink{
+  background:var(--black); color:#fff; border:1px solid var(--black);
+  border-radius:999px; padding:.7rem 1.1rem; transition:all .2s cubic-bezier(.2,.8,.2,1);
+}
+.btn-dark-pink:hover{ background:var(--pink); border-color:var(--pink); color:#111; }
+
+.btn-outline-dark-pink{
+  background:#fff; color:var(--black); border:1.5px solid var(--black);
+  border-radius:999px; padding:.7rem 1.1rem; transition:all .2s cubic-bezier(.2,.8,.2,1);
+}
+.btn-outline-dark-pink:hover{ background:var(--pink); color:#111; border-color:var(--pink); }
+
+/* tombol create di modal */
+.modal .btn-create{
+  background:var(--black); color:#fff; border:1px solid var(--black);
+  border-radius:10px; padding:.55rem 1rem;
+}
+.modal .btn-create:hover{ background:var(--pink); border-color:var(--pink); color:#111; }

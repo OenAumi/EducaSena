@@ -1,0 +1,203 @@
+:root{
+  --black:#0b0f17;
+  --white:#fff;
+  --ink:#1f2937;
+  --muted:#6b7280;
+  --brand-blue:#2563eb;
+  --brand-blue-700:#1d4ed8;
+  --ring:rgba(37,99,235,.35);
+  --shadow-sm:0 1px 2px rgba(0,0,0,.06);
+  --shadow-md:0 6px 18px rgba(0,0,0,.10);
+  --radius:14px;
+  --radius-lg:20px;
+  --fast:.15s;
+  --norm:.25s;
+  --slow:.45s;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+
+/* NAV — brand should be white (no hover needed) */
+.navbar.navbar-dark .brand{
+  color:var(--white) !important;
+}
+
+/* “Go to Dashboard” — invert on hover (white bg, black text) */
+.btn-dashboard{
+  border-color:#e5e7eb !important;
+  color:#e5e7eb !important;
+  transition:all var(--norm) var(--ease);
+}
+.btn-dashboard:hover{
+  background:#fff !important;
+  color:#000 !important;
+  border-color:#fff !important;
+}
+
+/* Step card layout polish */
+.step-card{
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-sm);
+  overflow:hidden;
+  position:relative;
+  transition:transform var(--norm) var(--ease), box-shadow var(--norm) var(--ease), background var(--norm) var(--ease);
+}
+.step-card:hover{
+  transform:translateY(-3px);
+  box-shadow:var(--shadow-md);
+}
+
+/* Header row: name left, status right */
+.step-head{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:.75rem;
+}
+
+/* Row 2: due label left, due icon button right */
+.step-due{
+  display:flex; align-items:center; justify-content:space-between;
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+/* Centered notes button */
+.step-notes{
+  display:flex; justify-content:center;
+}
+
+/* Bottom-right actions (AI, Ask/WA, Delete) */
+.step-actions{
+  position:absolute; right:.75rem; bottom:.75rem;
+  display:flex; gap:.4rem; align-items:center;
+}
+
+/* Icon buttons */
+.btn-icon{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:36px; height:36px; border-radius:10px;
+  border:1px solid #e5e7eb; background:#fff; color:var(--ink);
+  transition:transform var(--fast) var(--ease), box-shadow var(--fast) var(--ease), background var(--fast) var(--ease), color var(--fast) var(--ease), border-color var(--fast) var(--ease);
+}
+.btn-icon:hover{ transform:translateY(-1px); box-shadow:0 6px 16px rgba(0,0,0,.08); }
+.btn-icon:focus-visible{ outline:0; box-shadow:0 0 0 4px var(--ring); }
+
+/* Specific icon accents */
+.btn-ai:hover{ background:#e0f2fe; border-color:#bae6fd; }           /* lightbulb */
+.btn-ask{ color:#0a7c2f; border-color:#e6f4ea; background:#f6fffa; }
+.btn-ask:hover{ background:#e6f4ea; }
+.btn-del{ color:#b91c1c; }
+.btn-del:hover{ background:#fee2e2; border-color:#fecaca; }
+
+.badge.rounded-pill{ padding:.35rem .6rem; }
+
+/* Buttons you asked to restyle */
+#addMs{
+  background:#000; border-color:#000; color:#fff;
+  transition:all var(--norm) var(--ease);
+}
+#addMs:hover{
+  background:var(--brand-blue); border-color:var(--brand-blue);
+}
+
+#saveStuck{
+  background:#000; color:#fff; border-color:#000;
+  transition:all var(--norm) var(--ease);
+}
+#saveStuck:hover{
+  background:#facc15; /* yellow-400 */
+  color:#111; border-color:#facc15;
+}
+
+/* Notes textarea nicer */
+#stuckText{
+  border-radius:12px;
+  transition:box-shadow var(--norm) var(--ease), border-color var(--norm) var(--ease);
+}
+#stuckText:focus{
+  border-color:var(--brand-blue);
+  box-shadow:0 0 0 4px var(--ring);
+}
+
+/* Hover hint softer */
+.step-card .hover-tools{
+  opacity:0; transform:translateY(6px); transition:opacity .18s var(--ease), transform .18s var(--ease);
+}
+.step-card:hover .hover-tools{ opacity:.9; transform:translateY(0); }
+
+/* Reduce motion respect */
+@media (prefers-reduced-motion: reduce){
+  .step-card, .btn, .btn-icon, #addMs, #saveStuck { transition:none !important; }
+}
+
+/* ==== TONE: row-based dark → gray ==== */
+.step-card{ color:#f8fafc; }                /* default text terang */
+.step-card a, .step-card .text-muted{ color:#e5e7eb; }
+
+.step-card.tone-0{ background:#111830; }    
+.step-card.tone-1{ background:#111827; }
+.step-card.tone-2{ background:#111824; }
+.step-card.tone-3{ background:#111821; }
+.step-card.tone-4{ background:#111818; }
+.step-card.tone-5{ background:#111815; }
+
+/* hover sedikit mencerahkan */
+.step-card:hover{ filter:brightness(1.06); }
+
+/* badge biar kontras di tema gelap */
+.step-card .badge.bg-secondary{ background:#9ca3af !important; color:#111 !important; }
+.step-card .badge.bg-primary{ background:#60a5fa !important; color:#0b1020 !important; }
+.step-card .badge.bg-success{ background:#34d399 !important; color:#033 !important; }
+
+/* header row + due row tetap sama seperti sebelumnya */
+.step-head{ display:flex; align-items:center; justify-content:space-between; gap:.75rem; }
+.step-due{  display:flex; align-items:center; justify-content:space-between; color:#d1d5db; font-size:.9rem; }
+
+/* icon buttons kontras di dark card */
+.btn-icon{
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.06);
+  color:#f9fafb;
+}
+.btn-icon:hover{ background:rgba(255,255,255,.12); box-shadow:0 8px 22px rgba(0,0,0,.28); }
+.btn-ai:hover{ color:#e0f2fe; }
+.btn-ask{ color:#86efac; border-color:rgba(34,197,94,.25); background:rgba(34,197,94,.10); }
+.btn-ask:hover{ background:rgba(34,197,94,.18); }
+.btn-del{ color:#fecaca; }
+.btn-del:hover{ background:rgba(254,226,226,.18); border-color:rgba(254,202,202,.45); }
+
+/* RENAME = icon kecil di samping badge */
+.btn-rename-icon{
+  width:30px; height:30px; border-radius:8px;
+  margin-left:.4rem;
+}
+.btn-rename-icon i{ font-size:14px; }
+
+/* NOTES hover = bg putih teks hitam */
+.step-notes .btn-notes{
+  border-color:#facc15; color:#111; background:#f59e0b; /* tetap kuning default */
+}
+.step-notes .btn-notes:hover{
+  background:#fff !important; color:#111 !important; border-color:#e5e7eb !important;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
+}
+
+/* ===== Modal Confirm Buttons ===== */
+
+/* default: hover jadi hitam */
+#appModalConfirm.btn-primary:hover,
+#appModalConfirm.btn-danger:hover {
+  background:#000 !important;
+  border-color:#000 !important;
+  color:#fff !important;
+}
+
+/* khusus due (confirmTheme = success) → bg hijau */
+#appModalConfirm.btn-success {
+  background:#16a34a !important;   /* green-600 */
+  border-color:#16a34a !important;
+  color:#fff !important;
+}
+#appModalConfirm.btn-success:hover {
+  background:#000 !important;
+  border-color:#000 !important;
+  color:#fff !important;
+}

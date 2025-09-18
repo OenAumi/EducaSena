@@ -1,0 +1,85 @@
+/* ===========================
+   EducaSena · Dashboard polish
+   =========================== */
+
+:root{
+  --black:#0b0f17;
+  --dark:#111827;
+  --dark-2:#1f2937;
+  --dark-3:#374151;
+  --gray:#6b7280;
+  --white:#fff;
+  --orange:#f59e0b;
+  --pink:#ec4899;
+  --ring:rgba(37,99,235,.35);
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+
+/* Brand putih tanpa hover */
+.navbar .brand{ color:#fff !important; }
+
+/* Toolbar kanan sejajar */
+#topToolbar{ display:flex; align-items:center; gap:.5rem; }
+
+/* Buttons seragam (hitam → hover oranye) */
+.btn-std{
+  background:#000 !important; color:#fff !important; border:1px solid #000 !important;
+  transition:all .22s var(--ease);
+  min-width:138px; /* seragam */
+}
+.btn-std:hover{ background:var(--orange) !important; border-color:var(--orange) !important; color:#fff !important; }
+.btn-std i{ font-size:1rem; }
+
+/* Tombol kecil ikon-only (share WA) */
+.btn-icon{
+  width:42px; height:36px; display:inline-flex; align-items:center; justify-content:center;
+  background:#000 !important; color:#fff !important; border:1px solid #000 !important;
+  transition:all .22s var(--ease);
+}
+.btn-icon:hover{ background:var(--orange) !important; border-color:var(--orange) !important; color:#fff !important; }
+
+/* Tombol di modal (hover pink) */
+.btn-modal{ background:#000; color:#fff; border-color:#000; }
+.btn-modal:hover{ background:var(--pink) !important; border-color:var(--pink) !important; color:#fff !important; }
+
+/* Progress bar lebih jelas & 0% tetap terlihat */
+.progress{ height:12px; border-radius:999px; overflow:hidden; }
+.progress-bar{
+  font-weight:700; font-size:.95rem;
+}
+.progress.zero .progress-bar{ color:#111; background:#e5e7eb; } /* jika 0% */
+
+/* Header: Title kiri, Deadline kanan */
+#dashHeader{
+  display:flex; align-items:baseline; justify-content:space-between;
+  gap:1rem; flex-wrap:wrap;
+}
+#dashHeader .deadline{
+  color:#d1d5db;
+  display:flex; align-items:center; gap:.5rem;
+}
+
+/* Kartu gelap bertahap seperti Journey */
+.card.d-tone{ color:#f8fafc; border:0; }
+.d-tone.t0{ background:#0b0f17; }
+.d-tone.t1{ background:#111827; }
+.d-tone.t2{ background:#1f2937; }
+.d-tone.t3{ background:#374151; }
+.d-tone.t4{ background:#4b5563; }
+.d-tone:hover{ filter:brightness(1.06); }
+
+/* Grid gap rapih */
+#grid .card{ border-radius:14px; box-shadow:0 1px 2px rgba(0,0,0,.06); }
+
+/* Modal: konten wrap + scroll aman */
+.modal-dialog-scrollable .modal-body{ max-height:min(70vh, 560px); }
+.modal-body{ word-break:break-word; white-space:pre-wrap; }
+
+/* Form fokus */
+.form-control:focus{ border-color:#2563eb; box-shadow:0 0 0 4px var(--ring); }
+
+/* Sembunyikan input asli (kita pindah ke modal) */
+#projTitle, #projDeadline{ display:none; }
+
+/* Unlock tombol disembunyikan ketika sudah unlock (class .is-unlocked) */
+.is-unlocked #unlockBtn{ display:none !important; }

@@ -1,0 +1,26 @@
+{
+  "Topic": [
+    "Cari gap riset dari 5 jurnal terbaru.",
+    "Spesifikkan variabel dan konteks studi."
+  ],
+  "Method": [
+    "Tentukan metode dan justifikasi ilmiahnya.",
+    "Sertakan referensi metodologi tahun terbaru."
+  ],
+  "Data": [
+    "Rencanakan teknik sampling / sumber dataset.",
+    "Siapkan prosedur pembersihan data."
+  ],
+  "Use Data": [
+    "Pilih teknik analisis (statistik/ML) yang sesuai tujuan.",
+    "Siapkan visualisasi hasil."
+  ],
+  "Bab": [
+    "Ikuti struktur IMRAD (Introduction, Methods, Results, Discussion).",
+    "Pastikan sitasi konsisten."
+  ],
+  "Publication": [
+    "Pilih target jurnal/konferensi dan baca author guidelines.",
+    "Cek syarat orisinalitas dan etika publikasi."
+  ]
+}

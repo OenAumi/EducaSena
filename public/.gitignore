@@ -1,0 +1,46 @@
+# === OS / Editor ===
+.DS_Store
+Thumbs.db
+*.log
+*.bak
+*.swp
+*.tmp
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# === Composer / PHP ===
+vendor/
+composer.lock
+
+# === CodeIgniter 4 specific ===
+writable/cache/*
+writable/logs/*
+writable/session/*
+writable/uploads/*
+!writable/index.html    # keep index.html
+.env
+.env.*
+
+# === Node / Frontend (jika ada) ===
+node_modules/
+npm-debug.log*
+yarn.lock
+package-lock.json
+dist/
+build/
+
+# === Assets generated ===
+/public/uploads/
+/public/storage/
+/public/icons/generated/
+
+# === Coverage / test ===
+coverage/
+phpunit.xml
+phpunit.xml.dist
+
+# === Local IDE config ===
+*.iml
+*.code-workspace

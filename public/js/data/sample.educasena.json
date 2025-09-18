@@ -1,0 +1,24 @@
+{
+    "project": {
+        "id" : "proj_123" ,
+        "title" : "Apocalypse" ,
+        "deadline" : "2025-10-15" 
+    } ,
+    "milestones": [
+        {
+            "name" : "Bab 1" ,
+            "status" : "done" ,
+            "due" : "2025-06-01"
+        },
+                {
+            "name" : "Bab 2" ,
+            "status" : "done" ,
+            "due" : "2025-06-20"
+        },
+                {
+            "name" : "Bab 3" ,
+            "status" : "doing" ,
+            "due" : "2025-07-01"
+        }
+    ]
+}
