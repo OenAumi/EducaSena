@@ -53,4 +53,5 @@ Fitur utama: milestone tracker, saran AI sederhana(hanya dummy), catatan per mil
 - MySQL / MariaDB
 - Token HMAC untuk proteksi update
 
-
+## Deploy link
+https://educasena.infinityfreeapp.com/
